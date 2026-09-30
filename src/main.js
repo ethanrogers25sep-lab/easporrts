@@ -7,7 +7,7 @@ import {
   PencilBrush,
   Control
 } from "fabric";
-import { EraserBrush } from "@erase2d/fabric";
+
 import "./style.css";
 import { createUI, bindUI } from "./ui.js";
 
