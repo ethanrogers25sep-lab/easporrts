@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body, #app { min-height: 100%; margin: 0; }
+body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button, input, select { font: inherit; }
+.workspace { min-height: calc(100vh - 64px); }
+.canvas-shell { max-width: min(92vw, 1120px); max-height: calc(100vh - 160px); }
+.canvas-stage { touch-action: none; }
+.tool-btn.active { background: #111827; color: white; box-shadow: 0 4px 14px rgba(15,23,42,.18); }
+.tool-btn:hover { transform: translateY(-1px); }
+#posterCanvas { display: block; }
+@media (max-width: 767px) {
+  .workspace { min-height: calc(100vh - 118px); }
+  .canvas-shell { max-width: 94vw; max-height: calc(100vh - 205px); }
+}
+@media print {
+  @page { margin: 0; }
+  html, body { background: white !important; }
+  body * { visibility: hidden !important; }
+  #canvasContainer, #canvasContainer * { visibility: visible !important; }
+  #canvasContainer {
+    position: fixed !important; inset: 0 !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    background: white !important; box-shadow: none !important; border: 0 !important;
+  }
+  #posterCanvas { box-shadow: none !important; }
+}
