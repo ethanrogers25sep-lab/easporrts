@@ -1,6 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,css}"],
-  theme: { extend: {} },
+  theme: {
+    extend: {
+      boxShadow: {
+        paper: "0 24px 70px rgba(15, 23, 42, .22)"
+      }
+    }
+  },
   plugins: []
 };
